@@ -10,3 +10,4 @@ $.ajax({
     console.log(response);
 }
 );
+let breedArray = ["German Shepherd", "Pitbull", "Collie", "Doberman", "King Charles Spaniel", "corgi"]
