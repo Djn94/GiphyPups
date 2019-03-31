@@ -1,0 +1,24 @@
+Giphy API
+	register for API key
+	play w search engine
+	
+make an ajax call from giphy
+
+pull results into a variable 
+
+sort grab the first 8 results 
+
+create new divs for information 
+
+join all divs
+
+append joined div too display div
+
+HTML
+
+buttonsDiv
+gifsDiv
+gifRatingDiv
+gifPicDiv
+user input bar
+submitbutton w event.preventdefault()
