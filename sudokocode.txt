@@ -20,5 +20,7 @@ buttonsDiv
 gifsDiv
 gifRatingDiv
 gifPicDiv
+submitAreaDiv
 user input bar
 submitbutton w event.preventdefault()
+favoritesDiv?
