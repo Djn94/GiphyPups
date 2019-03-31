@@ -1,9 +1,9 @@
 const apiKey = 'DrUotxLFBoXXpNInEw9qsNSqiG21xIaI';
-let breedArray = ["German Shepherd", "Pitbull", "Collie", "Doberman", "King Charles Spaniel", "corgi"]
+let breedArray = [""]
 let searchQuery = breedArray
-let Limit = prompt('How many gifs would you like?');
-const QueryUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchQuery}&limit=${Limit}&offset=0&lang=en`;
+const QueryUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchQuery}&limit=8&offset=0&lang=en`;
 function renderButtons() {
+    $("#buttons-view").empty();
     for (i = 0; i < breedArray.length; i++) {
         let newButton = $('</div>');
         newButton.addClass('breed');
@@ -14,7 +14,7 @@ function renderButtons() {
 }
 $('#submitButton').on('click', function (event) {
     event.preventDefault();
-    let breed = ('#breedInput').val().trim(); //make a breedinput
+    let breed = $('#breed-input').val().trim();
     breedArray.push(breed);
     renderButtons();
 }
