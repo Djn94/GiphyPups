@@ -1,4 +1,4 @@
-const apiKey = DrUotxLFBoXXpNInEw9qsNSqiG21xIaI;
+const apiKey = 'DrUotxLFBoXXpNInEw9qsNSqiG21xIaI';
 let searchQuery = prompt('enter search query: ');
 let Limit = prompt('How many gifs would you like?');
 let rating = prompt('Would you like to filter by rating?');
