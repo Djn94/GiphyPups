@@ -8,29 +8,36 @@
     <title>GiphyPups</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <link rel="stylesheet" type="Text/css" href="./assets/css/style.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    <h1>GiffyPups</h1>
     <div class=container>
-        <div id="buttonsDiv"></div>
-        <div id=gifsDiv>
-            <div id="gifRatingDiv"></div>
-            <div id="gifPicDiv"></div>
-        </div>
-        <div id="submitAreaDiv">
-            <div id="submitBar">
-                <form id="PupBar">
-                    <label for="breed-input">What type of pup do you like? </label>
-                    <input type="text" id="breed-input"><br>
-                    <input id="add-breed" type="submit" value="What type of pup do you like?">
-                </form>
-                <!-- submit bar -->
+        <div class=row>
+            <div class="jumbotron-fluid">
+                <h1 class="display-4">GiphyPups!</h1>
+                <p class="lead">Here you may enter your desired breed of pup gif.</p>
+                <div id="submitBar">
+                    <form id="PupBar">
+                        <label for="breed-input"></label>
+                        <input type="text" id="breed-input"><br>
+                        <input id="add-breed" type="submit" value="What type of pup do you like?">
+                    </form>
+                    <a class="btn btn-primary btn-lg" href="#" role="button" id="submitButton">Submit</a>
+                    <!-- submit bar -->
+                </div>
             </div>
-            <div id="submitButton">
-                <!-- submit button-->
+        </div>
+        <div id="buttonsDiv"></div>
+
+        <div id="submitAreaDiv">
+
+            <div id=gifsDiv>
+
             </div>
             <div id="favoritesDiv">
 
