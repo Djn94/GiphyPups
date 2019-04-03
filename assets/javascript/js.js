@@ -37,43 +37,26 @@ $(document).on('click', '.dogButton', function (event) {
             var newGif = $('<div>');
             var rating = callBack[i].rating;
             var ratingP = $('<p>').text('Rating: ' + rating);
-            var pupGifStill = $('<img>')
-            var pupGifAnim = $('<img>')
-            pupGifStill.attr('src', callBack[i].images.fixed_height_still.url).data('data-state', 'still').addClass('gifPics')
-            pupGifAnim.attr('src', callBack[i].images.fixed_height.url).data('data-state', 'animate').addClass('gifPics')
+            var pupGif = $('<img>').attr('src', callBack[i].images.fixed_height_still.url);
+            pupGif.attr('dataStatic', callBack[i].images.fixed_height_still.url);
+            pupGif.attr('dataAnimate', callBack[i].images.fixed_height.url);
+            pupGif.attr('data-state', 'still')
+            pupGif.addClass('gifPics')
             newGif.append(ratingP);
-            newGif.append(pupGifStill);
+            newGif.append(pupGif);
             $('#gifsDiv').prepend(newGif)
-            $(".gifPics").on("click", function () {
-                console.log(pupGifAnim) //can grab pupgifanim?
-                console.log(callBack) //cant grab callback var
 
+            $(".gifPics").on("click", function () {
                 var state = $(this).attr("data-state");
-                console.log(this)
                 if (state === "still") {
-                    $(this).attr("src", $(this).attr("src", pupGifStill));
+                    $(this).attr("src", $(this).attr("dataanimate"));
                     $(this).attr("data-state", "animate");
                 } else {
-                    $(this).attr("src", $(this).attr("src", callBack[i].images.fixed_height.url));
+                    $(this).attr("src", $(this).attr("dataStatic"));
                     $(this).attr("data-state", "still");
                 }
-            })
-
+            });
         }
-        console.log(pupGifAnim)
-        console.log(pupGifAnim)
 
-    }
-    );
-})
-$(document).on('click', '#gifPics', function (event) {
-
-    // if state = fixed_height_still
-    // make it move
-    // else
-    // make it stop
-
-
-
-
-})
+    });
+});
