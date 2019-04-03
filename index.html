@@ -16,8 +16,8 @@
 
 <body>
 
-    <div class=container>
-        <div class=row>
+    <div class='container'>
+        <div class='row'>
             <div class="jumbotron-fluid">
                 <h1 class="display-4">GiphyPups!</h1>
                 <p class="lead">Here you may enter your desired breed of pup gif.</p>
@@ -31,21 +31,25 @@
                     <!-- submit bar -->
                 </div>
             </div>
+            <div id="buttonsDiv"></div>
         </div>
-        <div id="buttonsDiv"></div>
-
-        <div id="submitAreaDiv">
-
-            <div id=gifsDiv>
-
+        <div class='row'>
+            <div class='col-md-8' id='gifsCol'>
+                <div id=gifsDiv>
+                </div>
             </div>
-            <div id="favoritesDiv">
+            <div class='col-md-4' id='sideCol'>
 
+                <div id="favoritesDiv">
+
+                </div>
             </div>
 
 
 
-            <script src="./assets/javascript/js.js"></script>
+        </div>
+
+        <script src="./assets/javascript/js.js"></script>
 </body>
 
 </html>

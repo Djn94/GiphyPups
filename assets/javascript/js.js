@@ -23,7 +23,7 @@ $('#add-breed').on('click', function (event) {
 }
 );
 
-$('.dogButton').on('click', function (event) {
+$(document).on('click', '.dogButton', function (event) {
     var breed = $(this).attr("data-name");
     const QueryUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${breed}&limit=8&offset=0&lang=en`;
     $.ajax({
@@ -37,12 +37,40 @@ $('.dogButton').on('click', function (event) {
             var newGif = $('<div>');
             var rating = callBack[i].rating;
             var ratingP = $('<p>').text('Rating: ' + rating);
-            var pupGif = $('<img>')
-            pupGif.attr('src', callBack[i].images.fixed_height.url);
+            var pupGifStill = $('<img>')
+            var pupGifAnim = $('<img>')
+            pupGifStill.attr('src', callBack[i].images.fixed_height_still.url).data('data-state', 'still').addClass('gifPics')
+            pupGifAnim.attr('src', callBack[i].images.fixed_height.url).addClass('gifPics')
             newGif.append(ratingP);
-            newGif.append(pupGif);
+            newGif.append(pupGifStill);
             $('#gifsDiv').prepend(newGif)
         }
+        console.log(pupGifAnim)
+        console.log(pupGifAnim)
+        $(".gifPics").on("click", function () {
+            console.log(pupGifAnim) //can grab pupgifanim?
+            console.log(callBack[i].images.fixed_height.url) //cant grab callback var
+            var state = $(this).attr("data-state");
+            if (state === "still") {
+                $(this).attr("src", $(this).attr("src", pupGifStill));
+                $(this).attr("data-state", "animate");
+            } else {
+                $(this).attr("src", $(this).attr("src", pupGifAnim));
+                $(this).attr("data-state", "still");
+            }
+        })
+
     }
     );
+})
+$(document).on('click', '#gifPics', function (event) {
+
+    // if state = fixed_height_still
+    // make it move
+    // else
+    // make it stop
+
+
+
+
 })
