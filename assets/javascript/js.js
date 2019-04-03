@@ -40,25 +40,28 @@ $(document).on('click', '.dogButton', function (event) {
             var pupGifStill = $('<img>')
             var pupGifAnim = $('<img>')
             pupGifStill.attr('src', callBack[i].images.fixed_height_still.url).data('data-state', 'still').addClass('gifPics')
-            pupGifAnim.attr('src', callBack[i].images.fixed_height.url).addClass('gifPics')
+            pupGifAnim.attr('src', callBack[i].images.fixed_height.url).data('data-state', 'animate').addClass('gifPics')
             newGif.append(ratingP);
             newGif.append(pupGifStill);
             $('#gifsDiv').prepend(newGif)
+            $(".gifPics").on("click", function () {
+                console.log(pupGifAnim) //can grab pupgifanim?
+                console.log(callBack) //cant grab callback var
+
+                var state = $(this).attr("data-state");
+                console.log(this)
+                if (state === "still") {
+                    $(this).attr("src", $(this).attr("src", pupGifStill));
+                    $(this).attr("data-state", "animate");
+                } else {
+                    $(this).attr("src", $(this).attr("src", callBack[i].images.fixed_height.url));
+                    $(this).attr("data-state", "still");
+                }
+            })
+
         }
         console.log(pupGifAnim)
         console.log(pupGifAnim)
-        $(".gifPics").on("click", function () {
-            console.log(pupGifAnim) //can grab pupgifanim?
-            console.log(callBack[i].images.fixed_height.url) //cant grab callback var
-            var state = $(this).attr("data-state");
-            if (state === "still") {
-                $(this).attr("src", $(this).attr("src", pupGifStill));
-                $(this).attr("data-state", "animate");
-            } else {
-                $(this).attr("src", $(this).attr("src", pupGifAnim));
-                $(this).attr("data-state", "still");
-            }
-        })
 
     }
     );
