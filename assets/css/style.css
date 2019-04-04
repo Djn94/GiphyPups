@@ -20,6 +20,7 @@ h1{
 }
 #add-breed{
     background-color: purple;
+    border-radius: 6px;
 }
 #submitbar{
     padding: 5px;

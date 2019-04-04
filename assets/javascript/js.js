@@ -38,8 +38,8 @@ $(document).on('click', '.dogButton', function (event) {
             var rating = callBack[i].rating;
             var ratingP = $('<p>').text('Rating: ' + rating).attr('id', 'ratingText');
             var pupGif = $('<img>').attr('src', callBack[i].images.fixed_height_still.url);
-            pupGif.attr('dataStatic', callBack[i].images.fixed_width_still.url);
-            pupGif.attr('dataAnimate', callBack[i].images.fixed_width.url);
+            pupGif.attr('dataStatic', callBack[i].images.fixed_height_still.url);
+            pupGif.attr('dataAnimate', callBack[i].images.fixed_height.url);
             pupGif.attr('data-state', 'still')
             pupGif.attr('id', 'pupGifs')
             pupGif.addClass('gifPics')
