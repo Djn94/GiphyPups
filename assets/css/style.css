@@ -1,3 +1,45 @@
 body{
     background-color: white;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: black;
+}
+#gifButton{
+    background-color: green;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1%;
+}
+h1{
+    background-color: purple;
+    height: 120%;
+    margin-top:0px;
+
+}
+#add-breed{
+    background-color: purple;
+}
+#submitbar{
+    padding: 5px;
+    margin-top:1rem;
+}
+#ratingText{
+color: white;
+}
+#breed-input{
+    margin-top:1rem;
+}
+#add-breed{
+    margin-top: 10px;
+}
+#gifsDiv{
+    display: flex;
+    flex-wrap: wrap;
+}
+#pupGifs{
+    border: 5px;
+    margin: 10px;
+    justify-content: space-between
 }

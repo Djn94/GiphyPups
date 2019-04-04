@@ -18,38 +18,37 @@
 
     <div class='container'>
         <div class='row'>
-            <div class="jumbotron-fluid">
-                <h1 class="display-4">GiphyPups!</h1>
-                <p class="lead">Here you may enter your desired breed of pup gif.</p>
-                <div id="submitBar">
-                    <form id="PupBar">
-                        <label for="breed-input"></label>
-                        <input type="text" id="breed-input"><br>
-                        <input id="add-breed" type="submit" value="What type of pup do you like?">
-                    </form>
-                    <a class="btn btn-primary btn-lg" href="#" role="button" id="submitButton">Submit</a>
-                    <!-- submit bar -->
-                </div>
-            </div>
+            <h1 class="display-4">GiphyPups!</h1>
             <div id="buttonsDiv"></div>
         </div>
-        <div class='row'>
-            <div class='col-md-8' id='gifsCol'>
-                <div id=gifsDiv>
-                </div>
+        <div class="row">
+            <div id="submitBar">
+                <form id="PupBar">
+                    <label for="breed-input"></label>
+                    <input type="text" placeholder="Pup breed goes here." id="breed-input"><br>
+                    <input id="add-breed" type="submit" value="Submit your preferred breed!">
+                </form>
             </div>
-            <div class='col-md-4' id='sideCol'>
-
-                <div id="favoritesDiv">
-
-                </div>
-            </div>
-
-
-
         </div>
 
-        <script src="./assets/javascript/js.js"></script>
+    </div>
+    <div class='row'>
+        <div class='col-md-8' id='gifsCol'>
+            <div id=gifsDiv>
+            </div>
+        </div>
+        <div class='col-md-4' id='sideCol'>
+
+            <div id="favoritesDiv">
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script src="./assets/javascript/js.js"></script>
 </body>
 
 </html>

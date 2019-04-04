@@ -9,6 +9,7 @@ function renderButtons() {
         let newButton = $('<button>');
         newButton.addClass('dogButton');
         newButton.attr('data-name', breedArray[i]);
+        newButton.attr('id', 'gifButton');
         newButton.text(breedArray[i]);
         $('#buttonsDiv').append(newButton);
     }
@@ -22,7 +23,6 @@ $('#add-breed').on('click', function (event) {
     renderButtons();
 }
 );
-
 $(document).on('click', '.dogButton', function (event) {
     var breed = $(this).attr("data-name");
     const QueryUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${breed}&limit=8&offset=0&lang=en`;
@@ -36,27 +36,31 @@ $(document).on('click', '.dogButton', function (event) {
         for (var i = 0; i < callBack.length; i++) {
             var newGif = $('<div>');
             var rating = callBack[i].rating;
-            var ratingP = $('<p>').text('Rating: ' + rating);
+            var ratingP = $('<p>').text('Rating: ' + rating).attr('id', 'ratingText');
             var pupGif = $('<img>').attr('src', callBack[i].images.fixed_height_still.url);
-            pupGif.attr('dataStatic', callBack[i].images.fixed_height_still.url);
-            pupGif.attr('dataAnimate', callBack[i].images.fixed_height.url);
+            pupGif.attr('dataStatic', callBack[i].images.fixed_width_still.url);
+            pupGif.attr('dataAnimate', callBack[i].images.fixed_width.url);
             pupGif.attr('data-state', 'still')
+            pupGif.attr('id', 'pupGifs')
             pupGif.addClass('gifPics')
             newGif.append(ratingP);
             newGif.append(pupGif);
             $('#gifsDiv').prepend(newGif)
 
-            $(".gifPics").on("click", function () {
-                var state = $(this).attr("data-state");
-                if (state === "still") {
-                    $(this).attr("src", $(this).attr("dataanimate"));
-                    $(this).attr("data-state", "animate");
-                } else {
-                    $(this).attr("src", $(this).attr("dataStatic"));
-                    $(this).attr("data-state", "still");
-                }
-            });
+
         }
 
     });
+});
+$(document).on('click', '.gifPics', function () {
+    var state = $(this).attr("data-state");
+    if (state === "still") {
+        $(this).attr("src", $(this).attr("dataanimate"));
+        $(this).attr("data-state", "animate");
+        console.log('was still')
+    } else {
+        $(this).attr("src", $(this).attr("dataStatic"));
+        $(this).attr("data-state", "still");
+        console.log('was moving')
+    }
 });
