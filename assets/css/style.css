@@ -21,6 +21,7 @@ h1{
 #add-breed{
     background-color: purple;
     border-radius: 6px;
+    font-size: 20px;
 }
 #submitbar{
     padding: 5px;
@@ -31,6 +32,7 @@ color: white;
 }
 #breed-input{
     margin-top:1rem;
+    font-size: 20px;
 }
 #add-breed{
     margin-top: 10px;
@@ -43,4 +45,8 @@ color: white;
     border: 5px;
     margin: 10px;
     justify-content: space-between
+}
+.instructions{
+    color: green;
+    font-size: 25px;
 }
